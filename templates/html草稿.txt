@@ -1,0 +1,2 @@
+<img alt="RZDF Post" class="movie_post" src="{{ url_for('static', filename='images/让子弹飞.jpg'') }}">
+<img alt="Walking Totoro" class="movie_post" src="{{ url_for('static', filename='images/让子弹飞.jpg') }}">

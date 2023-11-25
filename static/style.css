@@ -109,12 +109,22 @@ input[name=year] {
     display: inline;
 }
 
-.imdb {
+.bilibili {
     font-size: 12px;
     font-weight: bold;
-    color: black;
+    color: white;
     text-decoration: none;
-    background: #F5C518;
+    background: #FFB6C1;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
+.douban {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background: #008000;
     border-radius: 5px;
     padding: 3px 5px;
 }

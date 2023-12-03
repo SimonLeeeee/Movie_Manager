@@ -56,11 +56,22 @@ input[type=submit] {
 }
 
 input[type=text] {
-    border: 1px solid #ddd;
+    padding: 8px; /* 调整内边距 */
+    border: 1px solid #ccc; /* 边框样式 */
+    border-radius: 5px; /* 圆角边框 */
+    margin-bottom: 10px; /* 底部外边距 */
+}
+
+input[name=country] {
+    width: 100px;
+}
+
+input[name=type] {
+    width: 100px;
 }
 
 input[name=year] {
-    width: 50px;
+    width: 100px;
 }
 
 .btn {

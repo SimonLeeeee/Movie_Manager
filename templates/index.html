@@ -2,19 +2,28 @@
 
 {% block content %}
 <p>{{ movies|length }} Titles</p>
+{% if current_user.is_authenticated %}
 <form method="post">
-    Name <input type="text" name="title" autocomplete="off" required>
+    Name <input type="text" name="title" autocomplete="off" required><br>
+    Release_date <input type="text" name="release_date" autocomplete="off" required><br>
+    Country <input type="text" name="country" autocomplete="off" required>
+    Type <input type="text" name="type" autocomplete="off" required>
     Year <input type="text" name="year" autocomplete="off" required>
     <input class="btn" type="submit" name="submit" value="Add">
 </form>
+{% endif %}
 <ul class="movie-list">
     {% for movie in movies %}
-    <li>{{ movie.title }} - {{ movie.year }}
+    <li>
+	<strong style="font-size: 18px; color: darkgreen;">{{ movie.title }}</strong><br>
+	{{ movie.release_date }}- {{ movie.country }}- {{ movie.type }}- {{ movie.year }}
         <span class="float-right">
-            <a class="btn" href="{{ url_for('edit', movie_id=movie.id) }}">Edit</a>
-            <form class="inline-form" method="post" action="{{ url_for('.delete', movie_id=movie.id) }}">
-                <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+            {% if current_user.is_authenticated %}
+            <a class="btn" href="{{ url_for('edit', movie_id=movie.id) }}" style="font-weight: bold;">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('delete', movie_id=movie.id) }}">
+                <input class="btn" type="submit" name="delete" value="Delete" style="font-weight: bold;" onclick="return confirm('Are you sure?')">
             </form>
+            {% endif %}
             <a class="bilibili" href="https://search.bilibili.com/all?keyword={{ movie.title }}&search_source=1" target="_blank" title="Find this movie on bilibili">bilibili</a>
 	    <a class="douban" href="https://search.douban.com/movie/subject_search?search_text={{ movie.title }}&cat=1002" target="_blank" title="Find this movie on douban">douban</a>
         </span>

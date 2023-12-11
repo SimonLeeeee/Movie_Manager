@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="movie-table-container">
+    <table id="movieTable">
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>电影名</th>
+                <th>票房（单位：亿）</th>
+                <th>票房图表</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.box }}</td>
+                    <td><canvas class="barChart" data-value="{{ movie.box }}"></canvas></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+{% endblock %}
+

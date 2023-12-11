@@ -3,11 +3,13 @@
 {% block content %}
 <h3>Edit item</h3>
 <form method="post">
+    Movie_id <input type="text" name="movie_id" autocomplete="off" required value="{{ movie.id }}"><br>
     Name <input type="text" name="title" autocomplete="off" required value="{{ movie.title }}"><br>
     Release_date <input type="text" name="release_date" autocomplete="off" required value="{{ movie.release_date }}"><br>
     Country <input type="text" name="country" autocomplete="off" required value="{{ movie.country }}"><br>
     Type <input type="text" name="type" autocomplete="off" required value="{{ movie.type }}"><br>
     Year <input type="text" name="year" autocomplete="off" required value="{{ movie.year }}"><br>
+    票房数据(亿元） <input type="number" name="box" autocomplete="off" required value="{{ movie.box }}">
     <input class="btn" type="submit" name="submit" value="Update">
 </form>
 {% endblock %}

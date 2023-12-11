@@ -56,23 +56,22 @@ input[type=submit] {
 }
 
 input[type=text] {
-    padding: 8px; /* 调整内边距 */
+    width: 100px;
+    padding: 7px; /* 调整内边距 */
     border: 1px solid #ccc; /* 边框样式 */
     border-radius: 5px; /* 圆角边框 */
     margin-bottom: 10px; /* 底部外边距 */
 }
 
-input[name=country] {
-    width: 100px;
+input[name=adding] {
+    width: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #008000;
 }
 
-input[name=type] {
-    width: 100px;
-}
-
-input[name=year] {
-    width: 100px;
-}
 
 .btn {
     font-size: 12px;
@@ -151,4 +150,26 @@ footer {
     margin-top: 15px;
     text-align: center;
     padding: 10px;
+}
+
+.movie-table-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.chart-container {
+    max-width: 800px;
+    margin: 20px auto;
 }

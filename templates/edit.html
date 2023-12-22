@@ -9,7 +9,7 @@
     Country <input type="text" name="country" autocomplete="off" required value="{{ movie.country }}"><br>
     Type <input type="text" name="type" autocomplete="off" required value="{{ movie.type }}"><br>
     Year <input type="text" name="year" autocomplete="off" required value="{{ movie.year }}"><br>
-    票房数据(亿元） <input type="number" name="box" autocomplete="off" required value="{{ movie.box }}">
+    票房数据(亿元） <input type="number" name="box" step="0.01" autocomplete="off" required value="{{ movie.box }}">
     <input class="btn" type="submit" name="submit" value="Update">
 </form>
 {% endblock %}

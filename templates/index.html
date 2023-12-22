@@ -18,7 +18,7 @@
     Country <input type="text" name="country" autocomplete="off" required>
     Type <input type="text" name="type" autocomplete="off" required>
     Year <input type="text" name="year" autocomplete="off" required><br>
-    票房数据(亿元） <input type="number" name="box" autocomplete="off" required>
+    票房数据(亿元） <input type="number" name="box" step="0.01" autocomplete="off" required>
     <input class="btn" type="submit" name="adding" value="Add">
 </form>
 {% endif %}
@@ -43,6 +43,13 @@
     </li>
     {% endfor %}
 </ul>
-<img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}" title="to~to~ro~">
-<img alt="Walking Totoro" class="movie_post" src="{{ url_for('static', filename='images/让子弹飞.jpg') }}">
+
+<div class="image-container">
+    <img alt="Walking Totoro" class="movie_post" src="{{ url_for('static', filename='images/让子弹飞.jpg') }}">
+    <img alt="Walking Totoro" class="movie_post" src="{{ url_for('static', filename='images/我不是药神.jpeg') }}">
+    <img alt="Walking Totoro" class="movie_post" src="{{ url_for('static', filename='images/流浪地球.jpg') }}">
+</div>
+
+
+
 {% endblock %}
